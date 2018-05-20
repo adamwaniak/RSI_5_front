@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Obiekt {{object.name}}</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Nazwa</label>
+      <input type="text" class="form-control" id="name" required
+             [(ngModel)]="object.name" name="name" value="{{object.name}}">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Cena</label>
+      <input type="number" class="form-control" id="price" required
+             [(ngModel)]="object.price" name="price" value="{{object.price}}">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Opis</label>
+      <input type="text" class="form-control" id="description"
+             [(ngModel)]="object.description" name="description" value="{{object.description}}">
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="updateObject()">Submit</button>
+
+  </form>
+</div>
