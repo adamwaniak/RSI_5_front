@@ -51,6 +51,11 @@ export class ObjectsService {
     return this.http.get<Entity>(this.url + '/' + id);
   }
 
+  /**
+   * Usuwa studenta o podanym id
+   * @param {number} id studenta
+   * @returns {Observable<Object>}
+   */
   removeObject(id: number) {
     return this.http.delete(this.url + '/' + id);
 
