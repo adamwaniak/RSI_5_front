@@ -548,6 +548,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -562,6 +563,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>obiekt serwisu</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -603,7 +608,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/object/objects/objects.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/object/objects/objects.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -643,13 +648,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/object/objects/objects.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/object/objects/objects.component.ts:38</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Usuwa studenta z bazy danych</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -724,10 +731,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/object/objects/objects.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/object/objects/objects.component.ts:24</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Tablica przechowująca studentów</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -750,10 +763,16 @@ import {ObjectsService} from &#x27;../objects.service&#x27;;
   styleUrls: [&#x27;./objects.component.css&#x27;]
 })
 export class ObjectsComponent implements OnInit {
-
+  /**
+   *
+   * @param {ObjectsService} objectsService obiekt serwisu
+   */
   constructor(private objectsService: ObjectsService) {
   }
 
+  /**
+   * Tablica przechowująca studentów
+   */
   objects: Entity[];
 
   ngOnInit() {
@@ -764,6 +783,10 @@ export class ObjectsComponent implements OnInit {
     });
   }
 
+  /**
+   * Usuwa studenta z bazy danych
+   * @param {Entity} object
+   */
   public remove(object: Entity) {
     this.objectsService.removeObject(object.id).subscribe((response) &#x3D;&gt; {
       console.log(&#x27;Usunięto studenta: &#x27; + object.index);

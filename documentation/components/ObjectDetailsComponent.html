@@ -537,7 +537,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/object/object-details/object-details.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/object/object-details/object-details.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -618,13 +618,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/object/object-details/object-details.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/object/object-details/object-details.component.ts:36</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Przypisuje znalezionego studenta do obiektu</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -656,7 +658,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/object/object-details/object-details.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/object/object-details/object-details.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -696,13 +698,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/object/object-details/object-details.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/object/object-details/object-details.component.ts:49</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Modyfikuje dane studenta</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -751,10 +755,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/object/object-details/object-details.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/object/object-details/object-details.component.ts:19</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Obiekt studenta</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -778,7 +788,10 @@ import {ActivatedRoute} from &#x27;@angular/router&#x27;;
   styleUrls: [&#x27;./object-details.component.css&#x27;]
 })
 export class ObjectDetailsComponent implements OnInit {
-
+  /**
+   * Obiekt studenta
+   * @type {Entity}
+   */
   object: Entity &#x3D; new Entity();
 
   constructor(private objectsService: ObjectsService, private route: ActivatedRoute) {
@@ -793,6 +806,9 @@ export class ObjectDetailsComponent implements OnInit {
     this.getObject();
   }
 
+  /**
+   * Przypisuje znalezionego studenta do obiektu
+   */
   getObject(): void {
     const id &#x3D; +this.route.snapshot.paramMap.get(&#x27;id&#x27;); // + convert string to int
     this.objectsService.getObject(id).subscribe(object &#x3D;&gt; {
@@ -803,6 +819,9 @@ export class ObjectDetailsComponent implements OnInit {
 
   }
 
+  /**
+   * Modyfikuje dane studenta
+   */
   public updateObject(): void {
     this.objectsService.editObject(this.object.id, this.object).subscribe((response) &#x3D;&gt; console.log(response));
   }

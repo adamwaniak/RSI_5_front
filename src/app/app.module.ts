@@ -1,3 +1,4 @@
+// Adam Waniak, 228124
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

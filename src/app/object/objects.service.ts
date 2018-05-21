@@ -7,7 +7,10 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ObjectsService {
-
+  /**
+   * Endpoint bazy danych
+   * @type {string}
+   */
   url = 'api/objects';
 
   constructor(private http: HttpClient) {

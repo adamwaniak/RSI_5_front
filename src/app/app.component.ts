@@ -1,7 +1,4 @@
-/**
- * @Author: Adam Waniak
- */
-
+// Adam Waniak, 228124
 import { Component } from '@angular/core';
 
 

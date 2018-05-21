@@ -487,7 +487,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/object/objects.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/object/objects.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -552,7 +552,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/object/objects.service.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/object/objects.service.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -628,7 +628,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/object/objects.service.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/object/objects.service.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -720,7 +720,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/object/objects.service.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/object/objects.service.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -791,7 +791,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/object/objects.service.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/object/objects.service.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -836,7 +836,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/object/objects.service.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/object/objects.service.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -929,10 +929,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/object/objects.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/object/objects.service.ts:14</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Endpoint bazy danych</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -951,7 +957,10 @@ import {HttpClient} from &#x27;@angular/common/http&#x27;;
   providedIn: &#x27;root&#x27;
 })
 export class ObjectsService {
-
+  /**
+   * Endpoint bazy danych
+   * @type {string}
+   */
   url &#x3D; &#x27;api/objects&#x27;;
 
   constructor(private http: HttpClient) {

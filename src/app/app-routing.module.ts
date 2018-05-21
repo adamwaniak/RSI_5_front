@@ -1,3 +1,4 @@
+// Adam Waniak, 228124
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {ObjectsComponent} from "./object/objects/objects.component";

@@ -1,3 +1,4 @@
+// Adam Waniak, 228124
 import {Component, OnInit} from '@angular/core';
 import {Entity} from '../entity';
 import {ObjectsService} from '../objects.service';
@@ -12,7 +13,10 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./object-details.component.css']
 })
 export class ObjectDetailsComponent implements OnInit {
-
+  /**
+   * Obiekt studenta
+   * @type {Entity}
+   */
   object: Entity = new Entity();
 
   constructor(private objectsService: ObjectsService, private route: ActivatedRoute) {
@@ -27,6 +31,9 @@ export class ObjectDetailsComponent implements OnInit {
     this.getObject();
   }
 
+  /**
+   * Przypisuje znalezionego studenta do obiektu
+   */
   getObject(): void {
     const id = +this.route.snapshot.paramMap.get('id'); // + convert string to int
     this.objectsService.getObject(id).subscribe(object => {
@@ -37,6 +44,9 @@ export class ObjectDetailsComponent implements OnInit {
 
   }
 
+  /**
+   * Modyfikuje dane studenta
+   */
   public updateObject(): void {
     this.objectsService.editObject(this.object.id, this.object).subscribe((response) => console.log(response));
   }
