@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Entity} from "../entity";
-import {ObjectsService} from "../objects.service";
+import {Component, OnInit} from '@angular/core';
+import {Entity} from '../entity';
+import {ObjectsService} from '../objects.service';
 
 @Component({
   selector: 'app-objects',
@@ -9,12 +9,13 @@ import {ObjectsService} from "../objects.service";
 })
 export class ObjectsComponent implements OnInit {
 
-  constructor(private objectsService: ObjectsService) { }
+  constructor(private objectsService: ObjectsService) {
+  }
 
   objects: Entity[];
 
   ngOnInit() {
-    this.objectsService.getObjects().subscribe(objects => this.objects = objects)
+    this.objectsService.getObjects().subscribe(objects => this.objects = objects);
   }
 
 }

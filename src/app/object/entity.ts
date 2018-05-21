@@ -1,7 +1,6 @@
-export class Entity{
-  id: number;
+export class Entity {
   name: string;
-  price: number;
-  description: string;
-
+  lastName: string;
+  index: string;
+  city: string;
 }
