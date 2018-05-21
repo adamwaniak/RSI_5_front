@@ -15,7 +15,17 @@ export class ObjectsComponent implements OnInit {
   objects: Entity[];
 
   ngOnInit() {
-    this.objectsService.getObjects().subscribe(objects => this.objects = objects);
+    this.objectsService.getObjects().subscribe(objects => {
+      this.objects = objects;
+      console.log(this.objects);
+
+    });
+  }
+
+  public remove(object: Entity) {
+    this.objectsService.removeObject(object.id).subscribe((response) => {
+      console.log('Usunięto studenta: ' + object.index);
+    });
   }
 
 }

@@ -26,10 +26,15 @@ export class ObjectDetailsComponent implements OnInit {
 
   getObject(): void {
     const id = +this.route.snapshot.paramMap.get('id'); // + convert string to int
-    this.objectsService.getObject(id).subscribe(object => this.object = object);
+    this.objectsService.getObject(id).subscribe(object => {
+      this.object = object;
+      console.log(this.object);
+    });
+
+
   }
 
   public updateObject(): void {
-    this.objectsService.editObject(this.object.index, this.object).subscribe((response) => console.log(response));
+    this.objectsService.editObject(this.object.id, this.object).subscribe((response) => console.log(response));
   }
 }

@@ -3,7 +3,7 @@
   <form>
     <div class="form-group">
       <label for="name">Imie</label>
-      <input type="text" class="form-control" id="name" required
+      <input type="text" class="form-control" id="name" required minlength="4"
              [(ngModel)]="object.name" name="name">
     </div>
 
@@ -15,7 +15,7 @@
 
     <div class="form-group">
       <label for="index">Indeks</label>
-      <input type="text" class="form-control" id="index"
+      <input type="number" class="form-control" id="index"
              [(ngModel)]="object.index" name="index">
     </div>
 

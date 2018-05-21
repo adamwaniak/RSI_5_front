@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ObjectsService {
 
-  url = '169.254.244.255:56477/Service1.svc/Students';
+  url = 'api/objects';
 
   constructor(private http: HttpClient) {
   }
@@ -17,16 +17,23 @@ export class ObjectsService {
     return this.http.get<Entity[]>(this.url);
   }
 
-  editObject(index: string, entity: Entity) {
-    return this.http.post(this.url + '/' + index, entity);
+  editObject(id: number, entity: Entity) {
+    console.log(entity);
+    return this.http.post(this.url + '/' + id, entity);
   }
 
   addObject(object: Entity) {
+    console.log(object);
     return this.http.post(this.url, object);
   }
 
 
   getObject(id: number) {
     return this.http.get<Entity>(this.url + '/' + id);
+  }
+
+  removeObject(id: number) {
+    return this.http.delete(this.url + '/' + id);
+
   }
 }
