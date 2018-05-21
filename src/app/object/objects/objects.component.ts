@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Entity} from "../entity";
-import {ObjectsService} from "../objects.service";
+import {Component, OnInit} from '@angular/core';
+import {Entity} from '../entity';
+import {ObjectsService} from '../objects.service';
 
 /**
  * Komponent wyświetlający liste studentów
@@ -12,12 +12,23 @@ import {ObjectsService} from "../objects.service";
 })
 export class ObjectsComponent implements OnInit {
 
-  constructor(private objectsService: ObjectsService) { }
+  constructor(private objectsService: ObjectsService) {
+  }
 
   objects: Entity[];
 
   ngOnInit() {
-    this.objectsService.getObjects().subscribe(objects => this.objects = objects)
+    this.objectsService.getObjects().subscribe(objects => {
+      this.objects = objects;
+      console.log(this.objects);
+
+    });
+  }
+
+  public remove(object: Entity) {
+    this.objectsService.removeObject(object.id).subscribe((response) => {
+      console.log('Usunięto studenta: ' + object.index);
+    });
   }
 
 }

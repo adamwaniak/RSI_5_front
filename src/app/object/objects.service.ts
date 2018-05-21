@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import {Entity} from "./entity";
-import {Observable} from "rxjs/internal/Observable";
-import {HttpClient} from "@angular/common/http";
-import {EntityToAdd} from "./add-object/add-object.component";
+import {Injectable} from '@angular/core';
+import {Entity} from './entity';
+import {Observable} from 'rxjs/internal/Observable';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,8 @@ export class ObjectsService {
 
   url = 'api/objects';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   /**
    * Zwraca tablice studentów
@@ -28,6 +28,7 @@ export class ObjectsService {
    * @returns {Observable<Object>}
    */
   editObject(id: number, entity: Entity) {
+    console.log(entity);
     return this.http.post(this.url + '/' + id, entity);
   }
 
@@ -36,8 +37,9 @@ export class ObjectsService {
    * @param {EntityToAdd} object nowy student
    * @returns {Observable<Object>}
    */
-  addObject(object: EntityToAdd){
-    return this.http.post(this.url,object);
+  addObject(object: Entity) {
+    console.log(object);
+    return this.http.post(this.url, object);
   }
 
   /**
@@ -46,6 +48,11 @@ export class ObjectsService {
    * @returns {Observable<Entity>}
    */
   getObject(id: number) {
-    return this.http.get<Entity>(this.url + "/" + id);
+    return this.http.get<Entity>(this.url + '/' + id);
+  }
+
+  removeObject(id: number) {
+    return this.http.delete(this.url + '/' + id);
+
   }
 }

@@ -2,7 +2,10 @@
 <ul class="list-group">
   <li *ngFor="let object of objects" class="list-group-item">
     <a routerLink="/objects/object/{{object.id}}">
-      <span class="badge">{{object.id}}</span>Nazwa: {{object.name}}; Cena: {{object.price}}
+      <span class="badge">{{object.index}}</span>Imię: {{object.name}}; Nazwisko: {{object.lastName}}
+    </a>
+    <a routerLink="/objects">
+      <button (click)="remove(object)">Usun</button>
     </a>
   </li>
 </ul>

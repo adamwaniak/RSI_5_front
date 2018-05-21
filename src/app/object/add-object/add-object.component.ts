@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Entity} from "../entity";
-import {ObjectsService} from "../objects.service";
+import {Component, OnInit} from '@angular/core';
+import {Entity} from '../entity';
+import {ObjectsService} from '../objects.service';
 
 /**
  * Komponent umożliwiający dodanie nowego studenta
@@ -12,23 +12,19 @@ import {ObjectsService} from "../objects.service";
 })
 export class AddObjectComponent implements OnInit {
 
-  constructor(private objectsService: ObjectsService) { }
-  object: EntityToAdd;
+  constructor(private objectsService: ObjectsService) {
+  }
+
+  object: Entity;
+
   ngOnInit() {
     this.object = new Entity();
   }
 
-  public addObject(){
-    this.objectsService.addObject(this.object).subscribe((response) => console.log(response))
+  public addObject() {
+    this.objectsService.addObject(this.object).subscribe((response) => console.log(response));
   }
 
 }
 
-/**
- * Klasa DTO dla Entity
- */
-export class EntityToAdd{
-  name: string;
-  price: number;
-  description: string;
-}
+
