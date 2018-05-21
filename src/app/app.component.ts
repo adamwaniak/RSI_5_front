@@ -1,5 +1,13 @@
+/**
+ * @Author: Adam Waniak
+ */
+
 import { Component } from '@angular/core';
 
+
+/**
+ * Główny komponent aplikacji
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

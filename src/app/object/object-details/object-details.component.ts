@@ -3,6 +3,9 @@ import {Entity} from "../entity";
 import {ObjectsService} from "../objects.service";
 import {ActivatedRoute} from "@angular/router";
 
+/**
+ * Komponent pokazujący szczegóły studenta oraz umożliwia jego modyfikacje
+ */
 @Component({
   selector: 'app-object-details',
   templateUrl: './object-details.component.html',

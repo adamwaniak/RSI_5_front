@@ -5,7 +5,10 @@ import {ObjectDetailsComponent} from "./object/object-details/object-details.com
 import {AddObjectComponent} from "./object/add-object/add-object.component";
 
 
-
+/**
+ * Routing aplikacji
+ * @type {({path: string; redirectTo: string; pathMatch: string} | {path: string; component: ObjectsComponent} | {path: string; component: AddObjectComponent} | {path: string; component: ObjectDetailsComponent})[]}
+ */
 const routes: Routes = [
   {path: '', redirectTo: '/objects', pathMatch: 'full'},
   {path: 'objects', component: ObjectsComponent},

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Entity} from "../entity";
 import {ObjectsService} from "../objects.service";
 
+/**
+ * Komponent wyświetlający liste studentów
+ */
 @Component({
   selector: 'app-objects',
   templateUrl: './objects.component.html',

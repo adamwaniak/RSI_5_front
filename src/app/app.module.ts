@@ -13,6 +13,10 @@ import {InMemEntityDbService} from "./InMemEntityDbService";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 
+
+/**
+ * Moduły aplikacji
+ */
 @NgModule({
   declarations: [
     AppComponent,

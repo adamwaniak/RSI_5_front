@@ -1,5 +1,9 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
+
+/**
+ * Mock bazy danych
+ */
 export class InMemEntityDbService implements InMemoryDbService {
   createDb() {
     let objects = [
